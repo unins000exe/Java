@@ -5,31 +5,34 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         String task;
 
-        loop:
-        while (true) {
-            System.out.print("""
+        System.out.print("""
                     1 - Вывести Hello, World!
                     2 - Задание 2
                     3 - Задание 3
-                    Введите номер задания:\s""");
+                    """);
+
+        loop:
+        while (true) {
+            System.out.print("Введите номер задания: ");
             task = sc.nextLine();
 
             switch(task) {
                 case "1":
                     A1.hello();
                     break;
-
+                // TODO Выбрасывает после вывода 2 задания
                 case "2":
+                    B1.calc(sc);
                     break;
 
                 case "3":
                     break;
 
                 default:
+                    sc.close();
                     System.out.println("Завершение работы программы.");
                     break loop;
             }
-        sc.close();
         }
     }
 }
