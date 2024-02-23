@@ -1,3 +1,5 @@
+package main.java.sgu.ru;
+
 import java.util.Scanner;
 
 public class Main {
@@ -20,12 +22,14 @@ public class Main {
                 case "1":
                     A1.hello();
                     break;
-                // TODO Выбрасывает после вывода 2 задания
+
+                // TODO: выбрасывает
                 case "2":
-                    B1.calc(sc);
+                    B1.call_calc();
                     break;
 
                 case "3":
+                    C1.read_file();
                     break;
 
                 default:
