@@ -10,11 +10,18 @@ public class Wizard extends Character {
 
     @Override
     public int hashCode() {
-        return health + damage * 10 + mana * 100;
+        return health + damage * 10 + mana * 1000;
     }
 
     public boolean castSpell(int damage) {
         return mana - damage > 0;
+    }
+
+    public String toString()
+    {
+        return this.name + " {" + Integer.toString(this.health) + ", "
+                + Integer.toString(this.damage) + ", "
+                + Integer.toString(this.mana) + "}";
     }
 
     @Override

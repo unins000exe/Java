@@ -13,6 +13,13 @@ public class Knight extends Character {
         return health + damage * 10 + shieldStrength * 100;
     }
 
+    public String toString()
+    {
+        return this.name + " {" + Integer.toString(this.health) + ", "
+                                + Integer.toString(this.damage) + ", "
+                                + Integer.toString(this.shieldStrength) + "}";
+    }
+
     public boolean useShield() {
         return shieldStrength > 0;
     }
