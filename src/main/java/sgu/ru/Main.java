@@ -23,9 +23,8 @@ public class Main {
                     A1.hello();
                     break;
 
-                // TODO: выбрасывает
                 case "2":
-                    B1.call_calc();
+                    B1.call_calc(sc);
                     break;
 
                 case "3":

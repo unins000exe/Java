@@ -62,8 +62,7 @@ public class B1 {
         };
     }
 
-    public static void call_calc() {
-        Scanner sc = new Scanner(System.in);
+    public static void call_calc(Scanner sc) {
         String left, right, op;
 
         System.out.print("Введите два числа и операцию: ");
@@ -103,7 +102,6 @@ public class B1 {
                 System.out.println(ae.getMessage());
             }
         }
-        sc.close();
     }
 
 }
