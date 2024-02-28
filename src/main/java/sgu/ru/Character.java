@@ -37,6 +37,13 @@ public class Character implements Comparable<Character>, Cloneable{
         return super.clone();
     }
 
+
+    protected Object clone2() throws CloneNotSupportedException {
+        Character character = (Character) super.clone();
+        character.characterClan = (Clan) this.characterClan.clone();
+        return character;
+    }
+
     public void get_attacked(Character enemy)
     {
         this.health -= enemy.damage;
