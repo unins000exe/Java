@@ -8,8 +8,6 @@ import java.util.function.Predicate;
 
 public class A3 {
     public static void filterStream(Scanner sc) {
-//        Stream<Integer> numbers = Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-
         System.out.print("Введите числа: ");
         String input = sc.nextLine();
         Stream<Integer> numbers = Arrays.stream(input.split(" "))
