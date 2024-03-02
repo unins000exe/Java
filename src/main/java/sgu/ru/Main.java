@@ -1,13 +1,39 @@
 package main.java.sgu.ru;
 
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Knight c1 = new Knight("Рыцарь", 10, 3, 10);
-        Character c2 = new Character("Монстр", 15, 3);
-        Wizard c3 = new Wizard("Маг", 5, 3, 30);
+        Scanner sc = new Scanner(System.in);
+        String task;
 
-        c1.get_attacked(c3);
-        c3.get_attacked(c1);
+        System.out.print("""
+                    1 - Задание 1
+                    2 - Задание 2
+                    3 - Задание 3
+                    """);
+
+        loop:
+        while (true) {
+            System.out.print("Введите номер задания: ");
+            task = sc.nextLine();
+
+            switch(task) {
+                case "1":
+                    A3.filterStream(sc);
+                    break;
+
+                case "2":
+                    break;
+
+                case "3":
+                    break;
+
+                default:
+                    sc.close();
+                    System.out.println("Завершение работы программы.");
+                    break loop;
+            }
+        }
     }
 }
