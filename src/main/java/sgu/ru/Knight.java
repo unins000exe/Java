@@ -3,14 +3,23 @@ package main.java.sgu.ru;
 public class Knight extends Character {
     int shieldStrength;
 
-    public Knight(String name, int health, int damage, int shieldStrength) {
-        super(name, health, damage);
+    public Knight(int id, String name, int health, int damage, int shieldStrength) {
+        super(id, name, health, damage);
         this.shieldStrength = shieldStrength;
     }
 
-    @Override
-    public int hashCode() {
-        return health + damage * 10 + shieldStrength * 100;
+    public boolean equals(Knight other)
+    {
+        if (this.health != other.health)
+            return false;
+
+        if (this.damage != other.damage)
+            return false;
+
+        if (this.shieldStrength != other.shieldStrength)
+            return false;
+
+        return true;
     }
 
     public String toString()
@@ -25,7 +34,7 @@ public class Knight extends Character {
     }
 
     @Override
-    public void get_attacked(Character enemy) {
+    public void getAttacked(Character enemy) {
         int damage = enemy.damage;
         if (this.useShield())
         {

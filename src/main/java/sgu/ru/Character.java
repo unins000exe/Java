@@ -5,15 +5,28 @@ public class Character implements Comparable<Character>, Cloneable{
     public Clan characterClan;
     public int health;
     public int damage;
+    public int id;
 
-    public Character(String name, int health, int damage) {
+    public Character(int id, String name, int health, int damage) {
+        this.id = id;
         this.health = health;
         this.damage = damage;
         this.name = name;
     }
 
     public int hashCode() {
-        return health + damage * 10;
+        return id;
+    }
+
+    public boolean equals(Character other)
+    {
+        if (this.health != other.health)
+            return false;
+
+        if (this.damage != other.damage)
+            return false;
+
+        return true;
     }
 
     @Override
@@ -38,13 +51,13 @@ public class Character implements Comparable<Character>, Cloneable{
     }
 
 
-    protected Object clone2() throws CloneNotSupportedException {
+    protected Object deepClone() throws CloneNotSupportedException {
         Character character = (Character) super.clone();
         character.characterClan = (Clan) this.characterClan.clone();
         return character;
     }
 
-    public void get_attacked(Character enemy)
+    public void getAttacked(Character enemy)
     {
         this.health -= enemy.damage;
         System.out.printf("%s нанёс %d урона %s \n", enemy.name, enemy.damage, this.name);

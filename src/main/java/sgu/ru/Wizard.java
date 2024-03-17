@@ -3,18 +3,27 @@ package main.java.sgu.ru;
 public class Wizard extends Character {
     private int mana;
 
-    public Wizard(String name, int health, int damage, int mana) {
-        super(name, health, damage);
+    public Wizard(int id, String name, int health, int damage, int mana) {
+        super(id, name, health, damage);
         this.mana = mana;
-    }
-
-    @Override
-    public int hashCode() {
-        return health + damage * 10 + mana * 1000;
     }
 
     public boolean castSpell(int damage) {
         return mana - damage > 0;
+    }
+
+    public boolean equals(Wizard other)
+    {
+        if (this.health != other.health)
+            return false;
+
+        if (this.damage != other.damage)
+            return false;
+
+        if (this.mana != other.mana)
+            return false;
+
+        return true;
     }
 
     public String toString()
@@ -25,8 +34,8 @@ public class Wizard extends Character {
     }
 
     @Override
-    public void get_attacked(Character enemy) {
-        super.get_attacked(enemy);
+    public void getAttacked(Character enemy) {
+        super.getAttacked(enemy);
 
         int spellDamage = enemy.damage % 10;
         if (this.castSpell(spellDamage) && this.health > 0)
