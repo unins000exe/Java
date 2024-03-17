@@ -75,5 +75,7 @@ public class Main {
         character1.getAttacked(character2);
         character2.getAttacked(knight);
 
+        wizard.heal();
+
     }
 }

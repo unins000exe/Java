@@ -1,6 +1,7 @@
 package main.java.sgu.ru;
 
-public class Character implements Comparable<Character>, Cloneable{
+
+public class Character implements Comparable<Character>, Cloneable, Fightable{
     public String name;
     public Clan characterClan;
     public int health;
@@ -62,6 +63,14 @@ public class Character implements Comparable<Character>, Cloneable{
         this.health -= enemy.damage;
         System.out.printf("%s нанёс %d урона %s \n", enemy.name, enemy.damage, this.name);
         System.out.printf("У %s осталось очков здоровья %d \n", this.name, this.health);
+    }
+
+    public void heal()
+    {
+        int healValue = this.damage / 2;
+        this.health += healValue;
+        System.out.printf("%s восстановил %d здоровья \n", this.name, healValue);
+        System.out.printf("У %s теперь очков здоровья %d \n", this.name, this.health);
     }
 
 }
